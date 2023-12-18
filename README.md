@@ -52,6 +52,19 @@ mongosh
 ## test> db.version();
 ## 7.0.4
 
+show dbs;
+
+use admin;
+
+show collections;
+
+use local;
+
+show collections;
+
+db.startup_log.find().limit(10);
+
+
 ## Pour sortir du client shell mongosh : 
 quit
 
