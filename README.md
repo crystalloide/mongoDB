@@ -64,6 +64,8 @@ show collections;
 
 db.startup_log.find().limit(10);
 
+db.startup_log.find().limit(10).pretty;
+
 
 ## Pour sortir du client shell mongosh : 
 quit
