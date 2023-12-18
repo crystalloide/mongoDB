@@ -1,7 +1,15 @@
+[# Test](https://gitpod.io/workspaces)
 
-https://github.com/crystalloide/mongoDB
+# https://github.com/crystalloide/mongoDB
 
-https://gitpod.io/workspaces
+# https://gitpod.io/workspaces
+
+# MongoDB-exemple-with-gitpod
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/mongoDB)
+
+
+#	Installez Docker avec Docker Compose V2 en suivant les instructions d’installation ici : https://docs.docker.com/compose/install
 
 
 https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
