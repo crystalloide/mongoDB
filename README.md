@@ -43,14 +43,15 @@ sudo apt-get install net-tools
 
 mkdir data
 
-## mongod --dbpath /workspace/mongotp/data 
 mongod --dbpath /workspace/mongoDB/data 
 
 mongosh
 
-test> db.version();
-7.0.4
+## Affichage de la version de mongoDB : 
+## test> db.version();
+## 7.0.4
 
+## Pour sortir du client shell mongosh : 
 quit
 
 ## En adaptant en fonction du nom de votre workspace :  https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/
