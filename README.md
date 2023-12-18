@@ -13,12 +13,13 @@
 
 docker pull mongodb/mongodb-enterprise-server:latest
 
-
 docker run --name mongodb -p 27017:27017 -d mongodb/mongodb-enterprise-server:latest
+
+# Pour voir le conteneur lancé qui porte le moteur mongoDB : 
 
 docker ps -a
 
-Pour arrêter l'instance lancée : 
+# Pour arrêter l'instance lancée : 
 
 docker stop mongodb
 
