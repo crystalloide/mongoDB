@@ -1,5 +1,3 @@
-[# Test](https://gitpod.io/workspaces)
-
 # https://github.com/crystalloide/mongoDB
 
 # https://gitpod.io/workspaces
@@ -30,7 +28,9 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb
 sudo apt-get update
 
 sudo apt-get install -y mongodb-mongosh
+
 sudo apt-get install -y mongodb-org
+
 sudo apt-get install net-tools
 
 mkdir data
