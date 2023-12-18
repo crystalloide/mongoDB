@@ -7,10 +7,9 @@
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/mongoDB)
 
 
-#	Installez Docker avec Docker Compose V2 en suivant les instructions d’installation ici : https://docs.docker.com/compose/install
+# 1ère façon d'utiliser MongoDB : via docker : 
 
-
-https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
+# https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
 
 docker pull mongodb/mongodb-enterprise-server:latest
 
@@ -18,6 +17,15 @@ docker pull mongodb/mongodb-enterprise-server:latest
 docker run --name mongodb -p 27017:27017 -d mongodb/mongodb-enterprise-server:latest
 
 docker ps -a
+
+Pour arrêter l'instance lancée : 
+
+docker stop mongodb
+
+docker ps -a
+
+
+# 2nde façon d'utiliser MongoDB : via instalaltion des packages : 
 
 wget -qO- https://www.mongodb.org/static/pgp/server-7.0.asc | sudo tee /etc/apt/trusted.gpg.d/server-7.0.asc
 
@@ -40,9 +48,11 @@ mongod --dbpath /workspace/mongoDB/data
 
 mongosh
 
-https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/
+test> db.version();
+7.0.4
 
+quit
 
+## En adaptant en fonction du nom de votre workspace :  https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/
 
-https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
-
+# Fin du TP
