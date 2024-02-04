@@ -116,6 +116,12 @@
 ### Et oui, il y en a déjà ! :
 
     show dbs;
+    
+#### Affichage de la liste des databases : 
+    test> show dbs;
+    admin   40.00 KiB
+    config  60.00 KiB
+    local   40.00 KiB    
 
 ### Pour pouvoir passer des commandes d'administration, on doit préalablement aller sur la database "admin" : 
 
