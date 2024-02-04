@@ -134,7 +134,19 @@
 #### Affichage des collections présentes dans la database "admin" :    
 
     system.version
+    
+### On se connecte sur la database "local" ensuite : 
 
+    use local;
+ 
+### On affiche -et on constate- qu'il n'y a pour le moment qu'une seule collection existante  : 
+
+    show collections;
+    
+#### Affichage des collections présentes dans la database "local" :     
+
+    startup_log
+   
 ### Pour afficher quelques informations utiles : 
 
     db.startup_log.find().limit(10);
@@ -142,16 +154,6 @@
 ### Pour afficher quelques informations utiles en format plus agréable/ pratique :
 
     db.startup_log.find().limit(10).pretty;
-  
-
-### On se connecte sur la database "local" ensuite : 
-
-    use local;
-
-### On affiche -et on constate- l'absence de collection existante cette fois : 
-
-    show collections;
-
 
 ### Pour sortir du client shell mongosh : 
     quit
