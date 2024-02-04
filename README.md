@@ -103,7 +103,12 @@
 
     mongosh
 
-### Affichage de la version de mongoDB : 
+### Pour afficher la version du moteur mongoDB : 
+
+    db.version();
+    
+#### Affichage de la version de mongoDB : 
+
     test> db.version();
     7.0.4
 
