@@ -69,6 +69,10 @@
 
     mkdir data
 
+## On liste les fichiers et répertoires présents :  
+
+    ls
+
 ## On lance maintenant le moteur NoSQL mongoDB en lui indiquant dans quel répertoire il va stocker les données : 
 
     mongod --dbpath /workspace/mongoDB/data 
@@ -76,10 +80,25 @@
 ## Remarque : notre déploiement ne comporte qu'un seul serveur : on parle donc ici de déploiement "stand-alone"
 
 ## Bien entendu, en production, il faudra déployer plusieurs mongoDB travaillant de concert, 
+
 ## les données étants réparties sur chacun d'entre eux pour permette la scalabilité.
 
-## On va maintenant se connecter sur le serveur mongoDB via un terminal en ligne de commande: l'utilitaire "mongosh" récupéré précédemment :
+## Remarque : le 1er terminal est désormais occupé par l'exécution du serveur mongoDB, 
+
+## et si on sort - avec CTRL+C par exemple-, cela revient à stopper l'exécution du serveur mmongoDB. 
+
+## On pourrait relancer notre serveur en exécution en tâche de fond avec un paramètre comme "-f"  
+
+## Mais on va simplement lancer un nouveau terminal bash : 
+
+## Pour cela, cliquer sur "+" en prenant soin de sélectionner "bash" en haut à droite de la 2nde partie de l'écran : 
+
+## On va maintenant pouvoir se connecter sur le serveur mongoDB 
+
+## via un terminal en ligne de commande: l'utilitaire "mongosh" récupéré précédemment. 
+
 ## Sans rien préciser d'autre, le client mongosh va prendre alors  les valeurs par défaut : 
+
 ## Il va chercher à joindre le serveur mongoDB en écoute sur "localhost" (ou 127.0.0.1 côté IP) et sur le port "27017" (port d'écoute, valeur par défaut également) :
 
     mongosh
