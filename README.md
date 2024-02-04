@@ -118,7 +118,7 @@
     show dbs;
     
 #### Affichage de la liste des databases : 
-    test> show dbs;
+
     admin   40.00 KiB
     config  60.00 KiB
     local   40.00 KiB    
@@ -130,6 +130,10 @@
 ### Pour afficher maintenant les collections présentes dans la database "admin" : 
 
     show collections;
+    
+#### Affichage des collections présentes dans la database "admin" :    
+
+    system.version
 
 ### Pour afficher quelques informations utiles : 
 
