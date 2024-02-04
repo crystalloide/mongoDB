@@ -277,6 +277,9 @@
 ### Pour sortir du client shell mongosh : 
     quit
 
+### Pour exécuter une commande en la passant en paramètre de mongosh :  
+    mongosh --host 127.0.0.1:27017 --eval "db.hostInfo()"
+    
 ## Noter que l'URL de votre workspace varie et qu'il faudra donc peut-être en tenir compte selon vos usages souhaités
 ## Dans mon cas, pour accéder au port 27017, c'était :  https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/
 
