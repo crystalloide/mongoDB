@@ -110,7 +110,7 @@
 #### Affichage de la version de mongoDB : 
 
     test> db.version();
-    7.0.4
+    7.0.5
 
 ### Pour afficher les databases existantes : 
 ### Et oui, il y en a déjà ! :
