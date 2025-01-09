@@ -136,7 +136,7 @@
 
 #### Bien entendu, en production, il faudra déployer plusieurs mongoDB travaillant de concert, 
 
-#### les données étants réparties sur chacun d'entre eux pour permette la scalabilité.
+#### les données étants réparties sur chacun d'entre eux pour permettre la scalabilité.
 
 #### Remarque : le 1er terminal est désormais occupé par l'exécution du serveur mongoDB, 
 
@@ -144,7 +144,7 @@
 
 #### On pourrait relancer notre serveur en exécution en tâche de fond avec un paramètre comme "-f"  
 
-#### Mais on va simplement lancer un nouveau terminal bash : 
+#### Mais on va simplement lancer un nouveau terminal de commande bash : 
 
 #### Pour cela, cliquer sur "+" en prenant soin de sélectionner "bash" en haut à droite de la 2nde partie de l'écran : 
 
