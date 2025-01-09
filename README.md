@@ -206,7 +206,7 @@ test>
 #### Affichage de la version de mongoDB : 
 
     test> db.version();
-    7.0.5
+    7.0.16
 
 #### Affichage des commandes disponibles avec l commande "help" : 
 
