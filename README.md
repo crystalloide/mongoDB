@@ -122,8 +122,11 @@
 #### On liste les fichiers et répertoires présents :  
 
     ls
+    
+#### On note -en particulier- le chemin du répertoire "data" qui sera l'emplacement ouù le serveur MongoDB stockera localement ses données :  
+    pwd
 
-#### On lance maintenant le moteur NoSQL mongoDB en lui indiquant dans quel répertoire il va stocker les données : 
+#### On lance maintenant le moteur NoSQL mongoDB en lui indiquant dans quel répertoire "data" il va stocker les données : 
 
     mongod --dbpath /workspace/mongoDB/data 
 
