@@ -1,12 +1,9 @@
+## MongoDB : (suite) Installation et utilisation client graphique Compass
+
+### Rappel : nous sommes ici : https://github.com/crystalloide/mongoDB
+
 #### ____________________________________________________________________________________________
     
-#### Noter que l'URL de votre workspace varie et qu'il faudra donc peut-être en tenir compte selon vos usages souhaités
-
-#### Dans mon cas, pour accéder au port 27017, c'était :  
-
-#### https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/
-
-
 #### on peut par exemple utiliser le client Compass à télécharger ici :
 
     https://www.mongodb.com/try/download/compass
@@ -15,10 +12,10 @@
 
     https://downloads.mongodb.com/compass/mongodb-compass-1.45.0-win32-x64.exe
 
-#### Noter que l'URL de votre workspace varie, et il faudra en tenir compte pour configurer notre client :
+#### Noter que l'URL de votre serveu ou cluster MongoDB workspace varie, et il faudra en tenir compte pour configurer notre client :
 
-#### Par exemple dans la présente démo, pour accéder au port 27017, c'était :  
+#### Par exemple, l'URI pour accéder au cluster MongoDB disponible sur le cloud pour les formations :   
 
-    https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/    
+    mongodb://m001-student:m001-mongodb-basics@cluster0-shard-00-00-jxeqq.mongodb.net:27017/?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primaryPreferred&ssl=true
 
-#### Pensez donc à prendre l'URI correspondante à votre cas actuel
+#### Pensez donc à prendre l'URI correspondante à votre cas
