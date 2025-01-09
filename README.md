@@ -132,13 +132,15 @@
 
     mongod --dbpath /workspace/mongoDB/data 
 
-#### Remarque : notre déploiement ne comporte qu'un seul serveur : on parle donc ici de déploiement "stand-alone"
+#### Remarque 1 : notre déploiement ne comporte qu'un seul serveur : on parle donc ici de déploiement "stand-alone"
 
 #### Bien entendu, en production, il faudra déployer plusieurs mongoDB travaillant de concert, 
 
 #### les données étants réparties sur chacun d'entre eux pour permettre la scalabilité.
 
-#### Remarque : le 1er terminal est désormais occupé par l'exécution du serveur mongoDB, 
+#### 
+
+#### Remarque 2: le 1er terminal est désormais occupé par l'exécution du serveur mongoDB, 
 
 #### et si on sort - avec CTRL+C par exemple-, cela revient à stopper l'exécution du serveur mmongoDB. 
 
