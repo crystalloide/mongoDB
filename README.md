@@ -153,7 +153,7 @@
 
 #### Pour faire simple, on va simplement lancer un nouveau terminal de commande bash : 
 
-#### Pour cela, cliquer sur "+" en prenant soin de sélectionner "bash" en haut à droite de la 2nde partie de l'écran : 
+#### Pour cela, sur la 2nde partie basse de l'écran : cliquer sur "+" en haut à droite en prenant soin de sélectionner "bash"  : 
 
 #### On va maintenant pouvoir se connecter sur le serveur mongoDB 
 
