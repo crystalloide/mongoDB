@@ -115,7 +115,9 @@
 
     sudo apt-get install net-tools
 
-#### On créée le répertoire (ici, c'est la valeur par défaut qui est prise) :  
+#### On va créer le répertoire qui servira au serveurs mongoDB pour stocker ses enregistrements
+
+#### (ici, c'est la valeur par défaut qui est prise : "data" ) :  
 
     mkdir data
 
