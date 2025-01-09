@@ -4,7 +4,7 @@
 
 #### ____________________________________________________________________________________________
     
-#### on peut par exemple utiliser le client Compass à télécharger ici :
+#### Sur votre poste de travail, on peut par exemple utiliser le client graphique Compass à télécharger ici :
 
     https://www.mongodb.com/try/download/compass
 
