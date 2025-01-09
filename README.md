@@ -175,6 +175,30 @@
 
     mongosh
 
+#### Affichage en retour :
+```
+Current Mongosh Log ID: 677fe5b3cd44d087b9544ca6
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8
+Using MongoDB:          7.0.16
+Using Mongosh:          2.3.8
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2025-01-09T14:49:01.083+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2025-01-09T14:49:01.083+00:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+   2025-01-09T14:49:01.083+00:00: vm.max_map_count is too low
+------
+
+test> 
+
+```
+
 #### Pour afficher la version du moteur mongoDB : 
 
     db.version();
