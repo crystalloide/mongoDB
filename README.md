@@ -32,7 +32,7 @@
 
 #### Noter que l'URL de votre workspace varie, et il faudra en tenir compte pour configurer notre client :
 
-#### PAr exemple, dans la présente démo, pour accéder au port 27017, c'était :  
+#### Par exemple dans la présente démo, pour accéder au port 27017, c'était :  
 
     https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/    
 
