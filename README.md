@@ -145,9 +145,9 @@
 
 #### Remarque 2 : le 1er terminal est désormais occupé par l'exécution du serveur mongoDB, 
 
-#### et si on fait "CTRL+C" par exemple, cela revient en fait à stopper l'exécution du serveur mmongoDB. 
+#### et si on fait "CTRL+C" par exemple, cela revient en fait à stopper l'exécution du service "Serveur mongoDB". 
 
-#### On pourrait alors relancer l'exécution du service en exécution en tâche de fond cette fois en ajoutantt le paramètre "-f"  
+#### On devrait alors relancer l'exécution du service, mais en exécution en tâche de fond cette fois : en ajoutantt le paramètre "-f"  
 
 #### ____________________________________________________________________________________________
 
