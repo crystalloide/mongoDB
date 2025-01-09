@@ -12,8 +12,6 @@
 
 ## 1ère façon d'utiliser MongoDB : via docker : 
 
-### Pour aller plus loin : https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
-
 #### Pour récupérer la dernière version de l'image mongoDB disponible dans Docker Hub : 
 
     docker pull mongodb/mongodb-enterprise-server:latest
@@ -34,6 +32,9 @@
 
     docker ps -a
 
+#### Pour aller plus loin : 
+
+#### https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
 
 ## 2nde façon d'utiliser MongoDB : via installation des packages : 
 
