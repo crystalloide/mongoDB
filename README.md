@@ -153,15 +153,25 @@
 
 #### Pour faire simple, on va simplement lancer un nouveau terminal de commande bash : 
 
-#### Pour cela, sur la 2nde partie basse de l'écran : cliquer sur "+" en haut à droite en prenant soin de sélectionner "bash"  : 
+#### Pour cela, sur la 2nde partie basse de l'écran : cliquer sur "+" en haut à droite en prenant soin de sélectionner "bash"   
+
+#### ____________________________________________________________________________________________
 
 #### On va maintenant pouvoir se connecter sur le serveur mongoDB 
 
-#### via un terminal en ligne de commande: l'utilitaire "mongosh" récupéré précédemment. 
+#### Sur notre nouveau terminal : l'utilitaire "mongosh" installé précédemment (client CLI) qui viendra se connecter au serveur (service "mongod" lancé) 
 
-#### Sans rien préciser d'autre, le client mongosh va prendre alors  les valeurs par défaut : 
+#### Sans rien préciser d'autre, le client "mongosh" va prendre alors  les valeurs par défaut : 
 
-#### Il va chercher à joindre le serveur mongoDB en écoute sur "localhost" (ou 127.0.0.1 côté IP) et sur le port "27017" (port d'écoute, valeur par défaut également) :
+#### Il va chercher à joindre le serveur mongoDB en écoute sur : 
+
+#### - sur l'hôte "localhost" (on aurait pu indiquer "127.0.0.1 ") valeur par défaut
+
+#### - sur le port "27017" (port d'écoute, valeur par défaut également)
+
+#### Notre serveur mongoDB ayant été lancé avec les valeurs par défaut ( rappel : "localhost" "27017" "data")
+
+#### Lançons donc le client sans rien préciser :
 
     mongosh
 
