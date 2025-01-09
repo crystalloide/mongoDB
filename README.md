@@ -24,25 +24,42 @@
 
     docker ps -a
 
-#### Si on veux installer un client graphique pour intéragir avec le serveur MongDOB lancé : 
+#### Pour intéragir avec le serveur MongoDB lancé, on va utiliser un client en ligne de commande (CLI) : 
 
-#### on peut par exemple utiliser le client Compass à télécharger ici :
+#### Ce client shell est nommé 'mongosh' : il est disponible par défaut sur le conteneur qui exécute déjà le serveur MongoDB 
 
-    https://www.mongodb.com/try/download/compass
+#### Pour lancer le client, on va donc d'abord ouvrir une session sur le conteneur en cours d'exécution nommé "mongodb"
 
-#### Soit dans notre cas le lien suivant pour Windows : 
+    docker exec -it mongodb mongosh  
 
-    https://downloads.mongodb.com/compass/mongodb-compass-1.45.0-win32-x64.exe
+#### Affichage :     
+    Current Mongosh Log ID: 677fdcf529d3e33ff4544ca6
+    Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8
+    Using MongoDB:          7.0.16
+    Using Mongosh:          2.3.8
 
-#### Noter que l'URL de votre workspace varie, et il faudra en tenir compte pour configurer notre client :
+    For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
 
-#### Par exemple dans la présente démo, pour accéder au port 27017, c'était :  
 
-    https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/    
+    To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+    You can opt-out by running the disableTelemetry() command.
 
-#### Pensez donc à prendre l'URI correspondante à votre cas actuel
+    ------
+       The server generated these startup warnings when booting
+       2025-01-09T13:51:42.495+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+       2025-01-09T13:51:42.496+00:00: vm.max_map_count is too low
+    ------
 
-#### Pour arrêter maintenant l'instance lancée : 
+    Enterprise test> 
+
+
+#### Pour sortir du client shell mongosh : 
+    quit
+
+#### Pour intéragir avec le serveur MongoDB lancé, on pourrait installer un client graphique : on verra cela plus tard dnas le TP
+
+
+#### Pour arrêter maintenant l'instance lancée ( = arrêter le conteneur 'mongodb') : 
 
     docker stop mongodb
 
@@ -53,6 +70,7 @@
 #### Pour aller plus loin : 
 
 #### https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
+
 
 ## 2nde façon d'utiliser MongoDB : via installation des packages : 
 
@@ -304,5 +322,22 @@
 #### Dans mon cas, pour accéder au port 27017, c'était :  
 
 #### https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/
+
+
+#### on peut par exemple utiliser le client Compass à télécharger ici :
+
+    https://www.mongodb.com/try/download/compass
+
+#### Soit dans notre cas le lien suivant pour Windows : 
+
+    https://downloads.mongodb.com/compass/mongodb-compass-1.45.0-win32-x64.exe
+
+#### Noter que l'URL de votre workspace varie, et il faudra en tenir compte pour configurer notre client :
+
+#### Par exemple dans la présente démo, pour accéder au port 27017, c'était :  
+
+    https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/    
+
+#### Pensez donc à prendre l'URI correspondante à votre cas actuel
 
 ## Fin du TP
