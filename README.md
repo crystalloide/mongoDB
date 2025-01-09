@@ -126,7 +126,7 @@
 
     ls
     
-#### On note -en particulier- le chemin du répertoire "data" qui sera l'emplacement ouù le serveur MongoDB stockera localement ses données :  
+#### On note -en particulier- le chemin du répertoire "data" qui sera l'emplacement où le serveur MongoDB stockera localement ses données :  
     pwd
 
 #### On lance maintenant le moteur NoSQL mongoDB en lui indiquant dans quel répertoire "data" il va stocker les données : 
