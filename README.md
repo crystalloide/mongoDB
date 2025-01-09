@@ -112,7 +112,7 @@
 
     sudo apt-get install -y mongodb-org
 
-#### On installe les utilitaires pratiques côté réseau (dont netstat) : 
+#### On installe les utilitaires pratiques côté réseau (dont le célèbre "netstat") : 
 
     sudo apt-get install net-tools
 
@@ -147,7 +147,7 @@
 
 #### et si on fait "CTRL+C" par exemple, cela revient en fait à stopper l'exécution du service "Serveur mongoDB". 
 
-#### On devrait alors relancer l'exécution du service, mais en exécution en tâche de fond cette fois : en ajoutantt le paramètre "-f"  
+#### On devrait alors relancer l'exécution du service, mais en exécution en tâche de fond cette fois : en ajoutant le paramètre "-f"  
 
 #### ____________________________________________________________________________________________
 
