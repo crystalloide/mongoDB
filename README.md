@@ -145,11 +145,13 @@
 
 #### Remarque 2 : le 1er terminal est désormais occupé par l'exécution du serveur mongoDB, 
 
-#### et si on sort - avec CTRL+C par exemple-, cela revient à stopper l'exécution du serveur mmongoDB. 
+#### et si on fait "CTRL+C" par exemple, cela revient en fait à stopper l'exécution du serveur mmongoDB. 
 
-#### On pourrait relancer notre serveur en exécution en tâche de fond avec un paramètre comme "-f"  
+#### On pourrait alors relancer l'exécution du service en exécution en tâche de fond cette fois en ajoutantt le paramètre "-f"  
 
-#### Mais on va simplement lancer un nouveau terminal de commande bash : 
+#### ____________________________________________________________________________________________
+
+#### Pour faire simple, on va simplement lancer un nouveau terminal de commande bash : 
 
 #### Pour cela, cliquer sur "+" en prenant soin de sélectionner "bash" en haut à droite de la 2nde partie de l'écran : 
 
