@@ -84,6 +84,7 @@
 
 #### https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
 
+#### ====================================================================================
 
 ## 2nde façon d'utiliser MongoDB : via installation des packages : 
 
@@ -131,6 +132,8 @@
 #### On lance maintenant le moteur NoSQL mongoDB en lui indiquant dans quel répertoire "data" il va stocker les données : 
 
     mongod --dbpath /workspace/mongoDB/data 
+
+#### ____________________________________________________________________________________________
 
 #### Remarque 1 : notre déploiement ne comporte qu'un seul serveur : on parle donc ici de déploiement "stand-alone"
 
