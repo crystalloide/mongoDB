@@ -24,7 +24,21 @@
 
     docker ps -a
 
-#### Pour arrêter l'instance lancée : 
+#### Si on veux installer un client graphique pour intéragir avec le serveur MongDOB lancé : 
+
+#### on peut par exemple utiliser le client Compass à télécharger ici :
+
+    https://www.mongodb.com/try/download/compass
+
+#### Noter que l'URL de votre workspace varie, et il faudra en tenir compte pour configurer notre client :
+
+#### PAr exemple, dans la présente démo, pour accéder au port 27017, c'était :  
+
+    https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/    
+
+#### Pensez donc çà prendre l'URI correspondante à votre cas actuel
+
+#### Pour arrêter maintenant l'instance lancée : 
 
     docker stop mongodb
 
@@ -281,7 +295,10 @@
 #### Pour exécuter une commande en la passant en paramètre de mongosh :  
     mongosh --host 127.0.0.1:27017 --eval "db.hostInfo()"
     
-### Noter que l'URL de votre workspace varie et qu'il faudra donc peut-être en tenir compte selon vos usages souhaités
-## Dans mon cas, pour accéder au port 27017, c'était :  https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/
+#### Noter que l'URL de votre workspace varie et qu'il faudra donc peut-être en tenir compte selon vos usages souhaités
 
-# Fin du TP
+#### Dans mon cas, pour accéder au port 27017, c'était :  
+
+#### https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/
+
+## Fin du TP
