@@ -40,7 +40,7 @@
 
     https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/    
 
-#### Pensez donc çà prendre l'URI correspondante à votre cas actuel
+#### Pensez donc à prendre l'URI correspondante à votre cas actuel
 
 #### Pour arrêter maintenant l'instance lancée : 
 
