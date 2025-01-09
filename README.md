@@ -52,6 +52,19 @@
 
     Enterprise test> 
 
+#### Pour afficher la version du moteur mongoDB : 
+
+    db.version();
+    
+#### Affichage de la version de mongoDB : 
+
+    test> db.version();
+    7.0.5
+
+#### Affichage des commandes disponibles avec l commande "help" : 
+
+    help
+
 
 #### Pour sortir du client shell mongosh : 
     quit
