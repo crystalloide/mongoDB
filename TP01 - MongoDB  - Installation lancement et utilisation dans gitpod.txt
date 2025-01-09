@@ -1,125 +1,222 @@
 #####################################################################################################################
 ## TP01 : MongoDB : installation lancement et utilisation dans gitpod
 #####################################################################################################################
-# MongoDB : installation, lancement, puis utilisation dans gitpod
 
-## Rappel : nous sommes ici : https://github.com/crystalloide/mongoDB
+## MongoDB : installation, lancement, puis utilisation dans gitpod
 
-## Pour ouvrir un environnement Gitpod en ligne avec un simple navigateur web : 
+### Rappel : nous sommes ici : https://github.com/crystalloide/mongoDB
+
+### Pour ouvrir un environnement Gitpod en ligne avec un simple navigateur web : 
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/mongoDB)
 
-## Pour vérifier - si nécessaire - si des workspaces sont déjà utilisés dans Gitpod :
+### Pour vérifier - si nécessaire - si des workspaces sont déjà utilisés dans Gitpod :
 
-## https://gitpod.io/workspaces
+### https://gitpod.io/workspaces
 
-# 1ère façon d'utiliser MongoDB : via docker : 
+## 1ère façon d'utiliser MongoDB : via docker : 
 
-## Pour aller plus loin : https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
-
-### Pour récupérer la dernière version de l'image mongoDB disponible dans Docker Hub : 
+#### Pour récupérer la dernière version de l'image mongoDB disponible dans Docker Hub : 
 
     docker pull mongodb/mongodb-enterprise-server:latest
 
-### Pour lancer un conteneur à partir de l'image précédente dans Docker Hub :
+#### Pour lancer un conteneur à partir de l'image précédente dans Docker Hub :
 
     docker run --name mongodb -p 27017:27017 -d mongodb/mongodb-enterprise-server:latest
 
-### Pour voir le conteneur lancé qui exécute le moteur mongoDB : 
+#### Pour voir le conteneur lancé qui exécute le moteur mongoDB : 
 
     docker ps -a
 
-### Pour arrêter l'instance lancée : 
+#### Pour intéragir avec le serveur MongoDB lancé, on va utiliser un client en ligne de commande (CLI) : 
 
-    docker stop mongodb
+#### Ce client shell est nommé 'mongosh' : il est disponible par défaut sur le conteneur qui exécute déjà le serveur MongoDB 
 
-### On vérifie l'arrêt effectif :     
+#### Pour lancer le client, on va donc d'abord ouvrir une session sur le conteneur en cours d'exécution nommé "mongodb"
 
-    docker ps -a
+    docker exec -it mongodb mongosh  
+
+#### Affichage :     
+    Current Mongosh Log ID: 677fdcf529d3e33ff4544ca6
+    Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8
+    Using MongoDB:          7.0.16
+    Using Mongosh:          2.3.8
+
+    For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
 
 
-# 2nde façon d'utiliser MongoDB : via installation des packages : 
+    To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+    You can opt-out by running the disableTelemetry() command.
 
-### On récupère le certificat qui sert à vérifier l'origine des binaires :
+    ------
+       The server generated these startup warnings when booting
+       2025-01-09T13:51:42.495+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+       2025-01-09T13:51:42.496+00:00: vm.max_map_count is too low
+    ------
 
-    wget -qO- https://www.mongodb.org/static/pgp/server-7.0.asc | sudo tee /etc/apt/trusted.gpg.d/server-7.0.asc
+    Enterprise test> 
 
-### On installe l'outil de gestion des certificats GNUPG :
-
-    sudo apt-get install gnupg
-
-### On installe le lien vers le repository permettant de récupérer les binaires MongoDB :
-
-    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-
-### On effectue un rafraichissement ensuite de l'outil de gestion des packages (apt dans notre cas) :
-
-    sudo apt-get update
-
-### On installe le package mongosh permettant de lancer un terminal shell en ligne de commandes qui enverra nos commandes vers le serveur mongoDB une fois celui-ci lancé :
-
-    sudo apt-get install -y mongodb-mongosh
-    
-### On installe le package mongodb-org qui contient notamment les binaires du serveur mongoDB :
-
-    sudo apt-get install -y mongodb-org
-
-### On installe les utilitaires pratiques côté réseau (dont netstat) : 
-
-    sudo apt-get install net-tools
-
-### On créée le répertoire (ici, c'est la valeur par défaut qui est prise) :  
-
-    mkdir data
-
-### On liste les fichiers et répertoires présents :  
-
-    ls
-
-### On lance maintenant le moteur NoSQL mongoDB en lui indiquant dans quel répertoire il va stocker les données : 
-
-    mongod --dbpath /workspace/mongoDB/data 
-
-### Remarque : notre déploiement ne comporte qu'un seul serveur : on parle donc ici de déploiement "stand-alone"
-
-### Bien entendu, en production, il faudra déployer plusieurs mongoDB travaillant de concert, 
-
-### les données étants réparties sur chacun d'entre eux pour permette la scalabilité.
-
-### Remarque : le 1er terminal est désormais occupé par l'exécution du serveur mongoDB, 
-
-### et si on sort - avec CTRL+C par exemple-, cela revient à stopper l'exécution du serveur mmongoDB. 
-
-### On pourrait relancer notre serveur en exécution en tâche de fond avec un paramètre comme "-f"  
-
-### Mais on va simplement lancer un nouveau terminal bash : 
-
-### Pour cela, cliquer sur "+" en prenant soin de sélectionner "bash" en haut à droite de la 2nde partie de l'écran : 
-
-### On va maintenant pouvoir se connecter sur le serveur mongoDB 
-
-### via un terminal en ligne de commande: l'utilitaire "mongosh" récupéré précédemment. 
-
-### Sans rien préciser d'autre, le client mongosh va prendre alors  les valeurs par défaut : 
-
-### Il va chercher à joindre le serveur mongoDB en écoute sur "localhost" (ou 127.0.0.1 côté IP) et sur le port "27017" (port d'écoute, valeur par défaut également) :
-
-    mongosh
-
-### Pour afficher la version du moteur mongoDB : 
+#### Pour afficher la version du moteur mongoDB : 
 
     db.version();
     
 #### Affichage de la version de mongoDB : 
 
     test> db.version();
-    7.0.5
+    7.0.16
 
-### Affichage des commandes disponibles avec l commande "help" : 
+#### Affichage des commandes disponibles avec l commande "help" : 
 
     help
 
-### Affichage en retour :  
+
+#### Pour sortir du client shell mongosh : 
+    quit
+
+#### Pour intéragir avec le serveur MongoDB lancé, on pourrait installer un client graphique : on verra cela plus tard dnas le TP
+
+
+#### Pour arrêter maintenant l'instance lancée ( = arrêter le conteneur 'mongodb') : 
+
+    docker stop mongodb
+
+#### On vérifie l'arrêt effectif :     
+
+    docker ps -a
+
+#### Pour aller plus loin : 
+
+#### https://www.mongodb.com/docs/manual/tutorial/install-mongodb-enterprise-with-docker/
+
+#### ====================================================================================
+
+## 2nde façon d'utiliser MongoDB : via installation des packages : 
+
+#### On récupère le certificat qui sert à vérifier l'origine des binaires :
+
+    wget -qO- https://www.mongodb.org/static/pgp/server-7.0.asc | sudo tee /etc/apt/trusted.gpg.d/server-7.0.asc
+
+#### On installe l'outil de gestion des certificats GNUPG :
+
+    sudo apt-get install gnupg
+
+#### On installe le lien vers le repository permettant de récupérer les binaires MongoDB :
+
+    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+
+#### On effectue un rafraichissement ensuite de l'outil de gestion des packages (apt dans notre cas) :
+
+    sudo apt-get update
+
+#### On installe le package mongosh permettant de lancer un terminal shell en ligne de commandes qui enverra nos commandes vers le serveur mongoDB une fois celui-ci lancé :
+
+    sudo apt-get install -y mongodb-mongosh
+    
+#### On installe le package mongodb-org qui contient notamment les binaires du serveur mongoDB :
+
+    sudo apt-get install -y mongodb-org
+
+#### On installe les utilitaires pratiques côté réseau (dont le célèbre "netstat") : 
+
+    sudo apt-get install net-tools
+
+#### On va créer le répertoire qui servira au serveurs mongoDB pour stocker ses enregistrements
+
+#### (ici, c'est la valeur par défaut qui est prise : "data" ) :  
+
+    mkdir data
+
+#### On liste les fichiers et répertoires présents :  
+
+    ls
+    
+#### On note -en particulier- le chemin du répertoire "data" qui sera l'emplacement où le serveur MongoDB stockera localement ses données :  
+    pwd
+
+#### On lance maintenant le moteur NoSQL mongoDB en lui indiquant dans quel répertoire "data" il va stocker les données : 
+
+    mongod --dbpath /workspace/mongoDB/data 
+
+#### ____________________________________________________________________________________________
+
+#### Remarque 1 : notre déploiement ne comporte qu'un seul serveur : on parle donc ici de déploiement "stand-alone"
+
+#### Bien entendu, en production, il faudra déployer plusieurs mongoDB travaillant de concert, 
+
+#### les données étants réparties sur chacun d'entre eux pour permettre la scalabilité.
+
+#### ____________________________________________________________________________________________
+
+#### Remarque 2 : le 1er terminal est désormais occupé par l'exécution du serveur mongoDB, 
+
+#### et si on fait "CTRL+C" par exemple, cela revient en fait à stopper l'exécution du service "Serveur mongoDB". 
+
+#### On devrait alors relancer l'exécution du service, mais en exécution en tâche de fond cette fois : en ajoutant le paramètre "-f"  
+
+#### ____________________________________________________________________________________________
+
+#### Pour faire simple, on va simplement lancer un nouveau terminal de commande bash : 
+
+#### Pour cela, sur la 2nde partie basse de l'écran : cliquer sur "+" en haut à droite en prenant soin de sélectionner "bash"   
+
+#### ____________________________________________________________________________________________
+
+#### On va maintenant pouvoir se connecter sur le serveur mongoDB 
+
+#### Sur notre nouveau terminal : l'utilitaire "mongosh" installé précédemment (client CLI) qui viendra se connecter au serveur (service "mongod" lancé) 
+
+#### Sans rien préciser d'autre, le client "mongosh" va prendre alors  les valeurs par défaut : 
+
+#### Il va chercher à joindre le serveur mongoDB en écoute sur : 
+
+#### - sur l'hôte "localhost" (on aurait pu indiquer "127.0.0.1 ") valeur par défaut
+
+#### - sur le port "27017" (port d'écoute, valeur par défaut également)
+
+#### Notre serveur mongoDB ayant été lancé avec les valeurs par défaut ( rappel : "localhost" "27017" "data")
+
+#### Lançons donc le client sans rien préciser :
+
+    mongosh
+
+#### Affichage en retour :
+```
+Current Mongosh Log ID: 677fe5b3cd44d087b9544ca6
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8
+Using MongoDB:          7.0.16
+Using Mongosh:          2.3.8
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2025-01-09T14:49:01.083+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2025-01-09T14:49:01.083+00:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+   2025-01-09T14:49:01.083+00:00: vm.max_map_count is too low
+------
+
+test> 
+
+```
+
+#### Pour afficher la version du moteur mongoDB : 
+
+    db.version();
+    
+#### Affichage de la version de mongoDB : 
+
+    test> db.version();
+    7.0.16
+
+#### Affichage des commandes disponibles avec l commande "help" : 
+
+    help
+
+#### Affichage en retour :  
     
     Shell Help:
 
@@ -153,7 +250,7 @@
 
 
 
-### Utilisation de la commande db.help() : 
+#### Utilisation de la commande db.help() : 
 
     db.help();
 
@@ -235,7 +332,7 @@
     checkMetadataConsistency                   Returns a cursor with information about metadata inconsistencies
 
 
-### Pour afficher les databases existantes : (Et oui, il y en a déjà !)
+#### Pour afficher les databases existantes : (Et oui, il y en a déjà !)
 
     show dbs;
     
@@ -245,11 +342,11 @@
     config  60.00 KiB
     local   40.00 KiB    
 
-### Pour pouvoir passer des commandes d'administration, on doit préalablement aller sur la database "admin" : 
+#### Pour pouvoir passer des commandes d'administration, on doit préalablement aller sur la database "admin" : 
 
     use admin;
 
-### Pour afficher maintenant les collections présentes dans la database "admin" : 
+#### Pour afficher maintenant les collections présentes dans la database "admin" : 
 
     show collections;
     
@@ -257,11 +354,11 @@
 
     system.version
     
-### On se connecte sur la database "local" ensuite : 
+#### On se connecte sur la database "local" ensuite : 
 
     use local;
  
-### On affiche -et on constate- qu'il n'y a pour le moment qu'une seule collection existante  : 
+#### On affiche -et on constate- qu'il n'y a pour le moment qu'une seule collection existante  : 
 
     show collections;
     
@@ -269,18 +366,22 @@
 
     startup_log
    
-### Pour afficher quelques informations utiles : 
+#### Pour afficher quelques informations utiles : 
 
     db.startup_log.find().limit(10);
 
-### Pour afficher quelques informations utiles en format plus agréable/ pratique :
+#### Pour afficher quelques informations utiles en format plus agréable/ pratique :
 
     db.startup_log.find().limit(10).pretty;
 
-### Pour sortir du client shell mongosh : 
+#### Pour sortir du client shell mongosh : 
     quit
 
-## Noter que l'URL de votre workspace varie et qu'il faudra donc peut-être en tenir compte selon vos usages souhaités
-## Dans mon cas, pour accéder au port 27017, c'était :  https://27017-crystalloide-mongodb-lygen7vizjf.ws-eu105.gitpod.io/
+#### Pour exécuter une commande en la passant en paramètre de mongosh :  
+    mongosh --host 127.0.0.1:27017 --eval "db.hostInfo()"
 
-# Fin du TP
+
+
+#####################################################################################################################
+## Fin du TP01 : MongoDB : installation lancement et utilisation dans gitpod
+#####################################################################################################################
